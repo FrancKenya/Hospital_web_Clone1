@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact - Neema Hospital</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">
+          <h1>Neema Hospital</h1>
+        </div>
+        <ul class="nav-links">
+          <li><a href="./home.html">Home</a></li>
+          <li><a href="./services.html">Services</a></li>
+          <li><a href="./branches.html">Branches</a></li>
+          <li><a href="./contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="hero">
+        <img
+          src="{{ url_for('static', filename='images/hospital.jpg') }}"
+          alt="Hospital"
+        />
+        <a href="/services" class="btn">Our Services</a>
+      </section>
+      <h1>Contact Us</h1>
+      <p>
+        For any questions, reporting or suggestions, feel free to contact us
+        through:
+      </p>
+      <ul>
+        <li>Email: info@neemahospital.com</li>
+        <li>Phone: +254 00 00000</li>
+        <li>Address: Mbagathi Road, Nairobi, Kenya</li>
+      </ul>
+    </main>
+    <footer>
+      <p>&copy; 2024 Neema Hospital. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

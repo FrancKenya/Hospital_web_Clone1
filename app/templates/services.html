@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Services - Neema Hospital</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">
+          <h1>Neema Hospital</h1>
+        </div>
+        <ul class="nav-links">
+          <li><a href="./home.html">Home</a></li>
+          <li><a href="./services.html">Services</a></li>
+          <li><a href="./branches.html">Branches</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="hero">
+        <img
+          src="{{ url_for('static', filename='images/hospital.jpg') }}"
+          alt="Hospital"
+        />
+        <a href="/services" class="btn">Our Services</a>
+      </section>
+      <h1>Our Services</h1>
+      <h2 id="inpatient">In patient:</h2>
+      <p>
+        Neema hospital has a general ward, an executive suite and exclusive
+        paediatric ward for children. The rooms are well designed to provide
+        comfort and not to cause any infections and reinfections to our
+        patients. Our infrastructure gives the optimum environment to facilitate
+        recupwration
+      </p>
+      <p>
+        We have an Intensive care unit which is a state of the art 30 bed
+        facility
+      </p>
+      <h2 id="outpatient">Out patient</h2>
+      <h4>Ambulance services</h4>
+      <p>
+        24 hour ambulance services: We have an around the clock ambulance system
+        that is available within institutions and on the road. The service is
+        available to everyone within Nairobi and can be contacted through
+        calling our toll free number provided in the contact section
+      </p>
+      <h5>24 hour laboratory services</h5>
+      <p>
+        Neema hospital has state of the art diagnostic equipments and well
+        experienced personnel to carry out laboratory services. We provide a 24
+        hour services system whereby you can drop by, and get your result
+        anytime
+      </p>
+      <p>
+        Besides that we carry dentistry, accident and emergency services,
+        dialysis, hydrotherapy, paediatric, pharmacy,and plastic surgery
+      </p>
+    </main>
+    <footer>
+      <p>&copy; 2024 Neema Hospital. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
