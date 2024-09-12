@@ -11,7 +11,7 @@ title: "Hospital Web Clone"
 </nav>
 
 <!-- Cover Image Section -->
-<div class="cover-image" style="background-image: url('assets/images/hospital.jpg');">
+<div class="cover-image" style="background-image: url('./assets/images/hospital.jpg');">
   <h1>Hospital Web Clone</h1>
   <p>Efficient hospital service management made easy.</p>
   <a href="#learn-more" class="button">Learn More</a>
