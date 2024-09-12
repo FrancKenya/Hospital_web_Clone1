@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-""" This module contains booking class for services page """
+""" This module contains booking class for the hospital clone"""
 
 from app.models.basemodel import BaseModel
 from sqlalchemy import Column, String, ForeignKey, Text
