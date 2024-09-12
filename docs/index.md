@@ -17,6 +17,29 @@ title: "Hospital Web Clone"
   <a href="#learn-more" class="button">Learn More</a>
 </div>
 
+<!-- Key Features Section -->
+## Key Features
+
+<div class="feature-container">
+  <div class="feature-item">
+    <img src="./assets/images/bookings.jpg" alt="Bookings Feature" class="feature-image">
+    <h2>Bookings</h2>
+    <p>Effortlessly schedule and manage medical appointments with our intuitive booking system. Patients can easily choose available slots and receive instant confirmations.</p>
+  </div>
+
+  <div class="feature-item">
+    <img src="./assets/images/services.jpg" alt="Services Feature" class="feature-image">
+    <h2>Services</h2>
+    <p>Access a comprehensive list of hospital services, including specialty consultations and routine check-ups. Our platform allows seamless integration with hospital service offerings.</p>
+  </div>
+
+  <div class="feature-item">
+    <img src="./assets/images/records.jpg" alt="Records Feature" class="feature-image">
+    <h2>Records</h2>
+    <p>Manage and review patient records efficiently. Our system provides secure access to patient history, test results, and other critical information to streamline hospital operations.</p>
+  </div>
+</div>
+
 <!-- About Section -->
 ## <a id="about"></a>About the Developer
 
