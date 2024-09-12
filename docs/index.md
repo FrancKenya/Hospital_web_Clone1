@@ -4,17 +4,17 @@ title: "Hospital Web Clone"
 ---
 
 <!-- Navigation Bar -->
-<nav style="background-color: #007acc; padding: 10px; text-align: center;">
-  <a href="#about" style="color: white; margin-right: 20px; text-decoration: none;">About</a>
-  <a href="#overview" style="color: white; margin-right: 20px; text-decoration: none;">Overview</a>
-  <a href="#learn-more" style="color: white; margin-right: 20px; text-decoration: none;">Learn More</a>
+<nav class="nav-bar">
+  <a href="#about">About</a>
+  <a href="#overview">Overview</a>
+  <a href="#learn-more">Learn More</a>
 </nav>
 
 <!-- Cover Image Section -->
-<div style="text-align: center; background-image: url('../app/static/images/hospital.jpg'); background-size: cover; padding: 100px 0; color: white;">
+<div class="cover-image" style="background-image: url('assets/images/hospital.jpg');">
   <h1>Hospital Web Clone</h1>
-  <p style="font-size: 24px;">Efficient hospital service management made easy.</p>
-  <a href="#learn-more" style="background-color: #007acc; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none;">Learn More</a>
+  <p>Efficient hospital service management made easy.</p>
+  <a href="#learn-more" class="button">Learn More</a>
 </div>
 
 <!-- About Section -->
@@ -34,7 +34,7 @@ This web clone offers services like:
 <!-- Learn More Section -->
 ## <a id="learn-more"></a>Learn More
 
-<a href="https://deployed-app-url.com" style="background-color: #28a745; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none;">View Deployed App</a>
+<a href="https://deployed-app-url.com" class="button button-green">View Deployed App</a>
 
 - [GitHub Repo](https://github.com/FrancKenya/Hospital_web_Clone1)
 - [Deployed App](https://deployed-app-url.com)

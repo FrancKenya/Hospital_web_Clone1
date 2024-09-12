@@ -1,0 +1,32 @@
+.cover-image {
+    text-align: center;
+    background-size: cover;
+    padding: 100px 0;
+    color: white;
+  }
+  .cover-image h1 {
+    font-size: 3em;
+  }
+  .cover-image p {
+    font-size: 24px;
+  }
+  .nav-bar {
+    background-color: #007acc;
+    padding: 10px;
+    text-align: center;
+  }
+  .nav-bar a {
+    color: white;
+    margin-right: 20px;
+    text-decoration: none;
+  }
+  .button {
+    background-color: #007acc;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+  }
+  .button-green {
+    background-color: #28a745;
+  }

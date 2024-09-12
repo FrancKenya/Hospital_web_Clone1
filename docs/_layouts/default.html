@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{ page.title }} - {{ site.title }}</title>
+    <link rel="stylesheet" href="{{ "/assets/css/custom.css" | relative_url }}">
+    {{ content_for_head }}
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="nav-bar">
+      <a href="#about">About</a>
+      <a href="#overview">Overview</a>
+      <a href="#learn-more">Learn More</a>
+    </nav>
+
+    <!-- Main Content -->
+    <main>{{ content }}</main>
+
+    <!-- Footer -->
+    <footer>
+      <p>
+        &copy; {{ site.time | date: "%Y" }} {{ site.title }}. All rights
+        reserved.
+      </p>
+    </footer>
+  </body>
+</html>
