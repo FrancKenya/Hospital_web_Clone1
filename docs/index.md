@@ -54,6 +54,24 @@ This web clone offers services like:
 - Managing patient information
 - Administrative hospital services
 
+<!-- About Section -->
+## About the Project
+
+The **Hospital Web Clone** project was inspired by my personal experience with healthcare systems. After encountering inefficiencies in managing appointments and patient records during a family health crisis, I realized how technology could significantly improve the quality and efficiency of healthcare services. This project aims to address these challenges by creating a comprehensive web application for managing hospital services.
+
+This project was developed as part of my portfolio for Holberton School. It represents a significant step in my journey as a developer, combining my interest in technology with a meaningful application that can have a real-world impact.
+
+### Team Members
+
+- **Francis Waihiga**
+  - [LinkedIn](https://www.linkedin.com/in/francis-waihiga-476198209/)
+  - [GitHub](https://github.com/FrancKenya)
+  - [Twitter](https://x.com/blueinjil)
+
+### GitHub Repository
+
+- [Hospital Web Clone GitHub Repository](https://github.com/FrancKenya/Hospital_web_Clone1)
+
 <!-- Learn More Section -->
 ## <a id="learn-more"></a>Learn More
 

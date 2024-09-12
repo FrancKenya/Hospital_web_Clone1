@@ -65,3 +65,33 @@
     color: #333;
   }
 
+/* About Section */
+.about-section {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .about-section h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+
+  .about-section p {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+
+  .about-section a {
+    color: #007acc;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .about-section a:hover {
+    text-decoration: underline;
+  }
