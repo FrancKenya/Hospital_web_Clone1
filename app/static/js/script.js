@@ -57,3 +57,79 @@ btn.style.opacity = '1';
 
 // Start the carousel
 setInterval(moveImage, delay);
+
+
+window.addEventListener('scroll', function() {
+  const section = document.querySelector('.welcome');
+  const image = document.querySelector('.welcome-img');
+  const heading = document.querySelector('.welcome-heading');
+  const paragraph = document.querySelector('.welcome-paragraph');
+  const button = document.querySelector('.welcome-btn');
+
+  const sectionPosition = section.getBoundingClientRect().top;
+  const screenPosition = window.innerHeight / 5; // Adjust to trigger earlier or later
+
+  if (sectionPosition < screenPosition) {
+    // Start image zoom-in
+    section.classList.add('show-image');
+
+    // After image is fully shown, show heading, paragraph, and button sequentially
+    setTimeout(() => {
+      section.classList.add('show-heading');
+    }, 5500); // Delay for image animation
+
+    setTimeout(() => {
+      section.classList.add('show-paragraph');
+    }, 8000); // seconds after heading
+
+    setTimeout(() => {
+      section.classList.add('show-button');
+    }, 10000); // seconds after paragraph
+  }
+});
+
+
+let currentClient = 0;
+const clients = document.querySelectorAll('.client');
+
+function showNextClient() {
+  // Hide the current client
+  clients[currentClient].classList.remove('active');
+
+  // Move to the next client, looping back if necessary
+  currentClient = (currentClient + 1) % clients.length;
+
+  // Show the next client
+  clients[currentClient].classList.add('active');
+}
+
+// Initialize the first client as active
+clients[currentClient].classList.add('active');
+
+// Change feedback every 5 seconds
+setInterval(showNextClient, 10000);
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const welcomeSection = document.querySelector(".welcome-section");
+
+  // Show image after 0.5 seconds
+  setTimeout(function () {
+    welcomeSection.classList.add("show-image");
+  }, 500);
+
+  // Show heading after 5.5 seconds
+  setTimeout(function () {
+    welcomeSection.classList.add("show-heading");
+  }, 5500);
+
+  // Show paragraph after 6.5 seconds
+  setTimeout(function () {
+    welcomeSection.classList.add("show-paragraph");
+  }, 6500);
+
+  // Show button after 7.5 seconds
+  setTimeout(function () {
+    welcomeSection.classList.add("show-button");
+  }, 7500);
+});

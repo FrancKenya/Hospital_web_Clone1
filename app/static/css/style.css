@@ -245,42 +245,36 @@ body {
     margin-bottom: 20px;
 }
 
-  .show-text {
+.show-text {
     opacity: 1;
 }
 
 .why-choose-us {
     text-align: center;
-    padding: 50px;
+    padding: 10px;
 }
 
 .why-choose-us h1 {
     text-align: center;
     margin-bottom: 30px;
+    padding-right: 10px;
+}
+
+.reason h2 {
+    text-align: center;
+    margin-bottom: 10px;
+    padding-right: 10px;
 }
 
 .reasons {
     display: flex;
-    justify-content: space-around;
+    align-items: center;
+    padding: 50px;
 }
 
 .reason img {
     width: 50px;
     height: 50px;
-}
-
-.welcome {
-    padding: 50px;
-    text-align: center;
-}
-
-.welcome .btn {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    text-decoration: none;
 }
 
 .visit-us {
@@ -293,7 +287,226 @@ body {
     height: auto;
 }
 
-footer {
+.welcome {
+    padding: 50px;
+    text-align: center;
+}
+
+.welcome-img {
+    width: 100%;
+    transform: scale(1);
+    transition: transform 5s ease-in-out;
+    opacity: 0;
+    padding-bottom: 30px;
+}
+
+.welcome-heading, .welcome-paragraph, .welcome-btn {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+
+.show-image .welcome-img {
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+.welcome-section.show-heading .welcome-heading {
+    opacity: 1;
+}
+
+.show-paragraph .welcome-paragraph {
+    opacity: 1;
+}
+
+.show-button .welcome-btn {
+    opacity: 1;
+}
+
+.welcome-btn {
+    display: inline-block;
+    background-color: blue;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    bottom: 30px;
+    left: 50%;
+}
+
+section.feedback {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    background-image: url('../images/feedback.jpg'); /* Use your image path */
+    background-size: cover;
+    background-attachment: fixed; /* Fixed background image */
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: brightness(90%); /* Dim the image */
+    overflow: hidden;
+}
+
+.feedback-container {
+    position: relative;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    z-index: 1; /* Ensure text is above the background */
+}
+
+.client {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    text-align: center;
+}
+
+.client.active {
+    opacity: 1;
+}
+
+.client h2 {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-top: 10px;
+    color: goldenrod;
+    padding: 50px;
+    filter: brightness(100%);
+}
+
+.client p {
+    font-style: italic; /* Message-like font */
+    font-size: medium;
+    color: #ffffff;
+    text-align: center;
+    width: 50%;
+    margin: 0 auto;
+    word-wrap: break-word;
+    display: block;
+
+
+}
+
+section.feedback h1 {
+    text-align: center;
+    font-size: 2em;
+    position: relative;
+    padding-bottom: 50px;
+    z-index: 1;
+    color: white;
+    margin-bottom: 20px;
+}
+
+ section.feedback::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay for better text visibility */
+    z-index: 0;
+}
+
+section.visit-us {
+    position: relative;
+    width: 100%;
+    min-height: 500px; /* Ensure the section has enough height */
+    background-image: url('../images/hospital-visit.jpg'); /* Use your image path */
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: brightness(90%);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px; /* Adding padding to avoid elements being cut off */
+    overflow: hidden;
+    margin-top: 50px;
+    margin-bottom: -50px;
+  }
+
+  .visit-us h1 {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: white;
+    z-index: 1;
+    margin-bottom: 40px;
+  }
+
+  .visit-us .h2-container {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    z-index: 1;
+    margin-top: 20px;
+    flex-wrap: wrap; /* Allow wrapping if needed */
+  }
+
+  .h2-container > div {
+    text-align: center;
+    flex: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px; /* Add margin to avoid overlapping */
+  }
+
+  .visit-us h2 {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 10px; /* Reduced margin to make space for buttons */
+  }
+
+  .visit-us .visit-btn {
+    padding: 10px 35px;
+    text-decoration: solid;
+    color: white;
+    background-color: blue;
+    border-radius: 5px;
+    z-index: 1;
+    font: bold;
+    margin-top: 10px;
+    display: block;
+    position: relative; /* Ensure it's positioned relative to its parent */
+  }
+
+  .visit-us .appointment-btn {
+    padding: 10px 20px;
+    text-decoration: none;
+    color: white;
+    font: bold;
+    background-color: blue;
+    border-radius: 5px;
+    z-index: 1;
+    margin-top: 10px;
+    display: block;
+    position: relative; /* Ensure it's positioned relative to its parent */
+  }
+  section.visit-us::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay to make text readable */
+    z-index: 0;
+  }
+
+  footer {
     background-color: blue;
     color: #fff;
     text-align: center;
