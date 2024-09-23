@@ -1,4 +1,4 @@
-#!usr/bin/python3
+#!/usr/bin/python3
 """ This module contains the routes for the services page """
 from flask import Blueprint, render_template
 

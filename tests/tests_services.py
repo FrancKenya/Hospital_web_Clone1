@@ -5,6 +5,7 @@
 from app.models.basemodel import BaseModel
 from app.models.booking import Booking
 from app.models.service import Service
+from app.models.branch import Branch
 from app import create_app
 import os
 from sqlalchemy import create_engine
@@ -30,17 +31,26 @@ class TestServiceModel(unittest.TestCase):
 
     def test_create(self):
         """"Test the creation of the service model"""
+
+        branch = Branch(name="Main", location="150 Nyumba Moja road", contacts="0720268453", email="branch@example.com")
+        self.session.add(branch)
+        self.session.commit()
+
         service = Service(
-            name="Consultation", description="General Consultation")
+            name="Consultation", description="General Consultation", branch_id=branch.id)
         self.session.add(service)
         self.session.commit()
         self.assertEqual(service.name, "Consultation")
         self.assertEqual(service.description, "General Consultation")
+        self.assertEqual(service.branch_id, branch.id)
 
     def test_update(self):
         """Test the update of the service"""
+        branch = Branch(name="Main", location="150 Nyumba Moja road", contacts="0720268453", email="branch@example.com")
+        self.session.add(branch)
+        self.session.commit()
         service = Service(
-            name='Consultation', description='General Consultation')
+            name='Consultation', description='General Consultation', branch_id=branch.id)
         self.session.add(service)
         self.session.commit()
         service.description = "Updating the description"
@@ -49,8 +59,11 @@ class TestServiceModel(unittest.TestCase):
 
     def test_delete(self):
         """Test the deletion of the service"""
+        branch = Branch(name="Main", location="150 Nyumba Moja road", contacts="0720268453", email="branch@example.com")
+        self.session.add(branch)
+        self.session.commit()
         service = Service(
-            name='Consultation', description='General Consultation')
+            name='Consultation', description='General Consultation', branch_id=branch.id)
         self.session.add(service)
         self.session.commit()
         self.session.delete(service)
@@ -59,8 +72,11 @@ class TestServiceModel(unittest.TestCase):
 
     def test_booking_relationship(self):
         """Test the relationship between service and booking"""
+        branch = Branch(name="Main", location="150 Nyumba Moja road", contacts="0720268453", email="branch@example.com")
+        self.session.add(branch)
+        self.session.commit()
         service = Service(
-            name='Consultation', description='General Consultation')
+            name='Consultation', description='General Consultation', branch_id=branch.id)
         self.session.add(service)
         self.session.commit()
         booking = Booking(

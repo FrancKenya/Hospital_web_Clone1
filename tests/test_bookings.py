@@ -3,6 +3,7 @@
 """ This module contains the test cases for the booking model """
 
 from app.models.basemodel import BaseModel
+from app.models.branch import Branch
 from app.models.booking import Booking
 from app.models.service import Service
 from app import create_app
@@ -28,8 +29,11 @@ class TestBookingModel(unittest.TestCase):
 
     def test_create(self):
         """Test the creation of the booking model"""
+        branch = Branch(name="Main", location="150 Nyumba Moja road", contacts="0720268453", email="branch@example.com")
+        self.session.add(branch)
+        self.session.commit()
         service = Service(
-            name='Consultation', description='General Consultation')
+            name='Consultation', description='General Consultation', branch_id=branch.id)
         self.session.add(service)
         self.session.commit()
         booking = Booking(
@@ -43,8 +47,11 @@ class TestBookingModel(unittest.TestCase):
 
     def test_update(self):
         """Test the update of the booking model"""
+        branch = Branch(name="Main", location="150 Nyumba Moja road", contacts="0720268453", email="branch@example.com")
+        self.session.add(branch)
+        self.session.commit()
         service = Service(
-            name='Consultation', description='General Consultation')
+            name='Consultation', description='General Consultation', branch_id=branch.id)
         self.session.add(service)
         self.session.commit()
         booking = Booking(
@@ -58,8 +65,11 @@ class TestBookingModel(unittest.TestCase):
 
     def test_delete(self):
         """Test the deletion of a booking"""
+        branch = Branch(name="Main", location="150 Nyumba Moja road", contacts="0720268453", email="branch@example.com")
+        self.session.add(branch)
+        self.session.commit()
         service = Service(
-            name='Consultation', description='General Consultation')
+            name='Consultation', description='General Consultation', branch_id=branch.id)
         self.session.add(service)
         self.session.commit()
         booking = Booking(

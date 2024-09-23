@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor's View - Bookings</title>
+    <link rel="stylesheet" href="../static/css/doctor_view.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Doctor's View - Bookings</h1>
+
+        <form method="GET" action="{{ url_for('bookings.doctor_view') }}">
+            <div class="filter-section">
+                <label for="date">Filter by Date:</label>
+                <input type="date" name="date" value="{{ selected_date }}">
+
+                <label for="time">Filter by Time:</label>
+                <input type="time" name="time" value="{{ selected_time }}">
+
+                <label for="service">Filter by Service:</label>
+                <select name="service">
+                    <option value="">Select Service</option>
+                    {% for service in services %}
+                    <option value="{{ service.id }}" {% if service.id == selected_service %}selected{% endif %}>{{ service.name }}</option>
+                    {% endfor %}
+                </select>
+
+                <label for="branch">Filter by Branch:</label>
+                <select name="branch">
+                    <option value="">Select Branch</option>
+                    {% for branch in branches %}
+                    <option value="{{ branch.id }}" {% if branch.id == selected_branch %}selected{% endif %}>{{ branch.name }}</option>
+                    {% endfor %}
+                </select>
+
+                <button type="submit">Filter</button>
+            </div>
+        </form>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Patient Name</th>
+                    <th>Age</th>
+                    <th>Gender</th>
+                    <th>Details</th>
+                    <th>Service</th>
+                    <th>Branch</th>
+                    <th>Appointment Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!--{% for booking in bookings %}-->
+                <tr>
+                    <td>{{ booking.patient_name }}</td>
+                    <td>{{ booking.patient_age }}</td>
+                    <td>{{ booking.patient_gender }}</td>
+                    <td>{{ booking.patient_details }}</td>
+                    <td>{{ booking.services.name }}</td>
+                    <td>{{ booking.branch.name }}</td>
+                    <td>{{ booking.appointment_time }}</td>
+                </tr>
+                <!--{% endfor %}-->
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

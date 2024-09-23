@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Appointment</title>
+    <link rel="stylesheet" href="../static/css/booking_styles.css" />
+    {% with messages = get_flashed_messages(with_categories=true) %} {% if
+    messages %}
+    <ul>
+      {% for category, message in messages %}
+      <li class="{{ category }}">{{ message }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %} {% endwith %}
+  </head>
+  <body>
+    <h1>Book an Appointment</h1>
+
+    <form action="{{ url_for('bookings.submit_booking')}}" method="POST">
+      <label for="patient_name">Your Name:</label>
+      <input type="text" id="patient_name" name="patient_name" required />
+
+      <label for="patient_age">Your Age:</label>
+      <input
+        type="number"
+        id="patient_age"
+        name="patient_age"
+        required
+        min="0"
+        max="120"
+      />
+
+      <label for="patient_gender">Your Gender:</label>
+      <select id="patient_gender" name="patient_gender" required>
+        <option value="" disabled selected>Select your gender</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="other">Other</option>
+      </select>
+
+      <label for="patient_details"
+        >Describe your problem (max 300 words):</label
+      >
+      <textarea
+        id="patient_details"
+        name="patient_details"
+        rows="4"
+        maxlength="1500"
+        required
+      ></textarea>
+
+      <label for="service">Select Service:</label>
+      <select id="service" name="service_id" required>
+        <option value="" disabled selected>Select a service</option>
+        {% for service in services %}
+        <option value="{{ service.id }}">{{ service.name }}</option>
+        {% endfor %}
+      </select>
+      <label for="branch">Select Branch:</label>
+      <select id="branch" name="branch_id" required>
+        <option value="" disabled selected>Select a branch</option>
+        {% for branch in branches %}
+        <option value="{{ branch.id }}">{{ branch.name }}</option>
+        {% endfor %}
+      </select>
+      <label for="appointment_time">Select Appointment Time:</label>
+      <input
+        type="datetime-local"
+        id="appointment_time"
+        name="appointment_time"
+        required
+      />
+
+      <button type="submit">Confirm Booking</button>
+    </form>
+  </body>
+</html>

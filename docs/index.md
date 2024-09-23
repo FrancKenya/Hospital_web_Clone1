@@ -75,7 +75,7 @@ This project was developed as part of my portfolio for Holberton School. It repr
 <!-- Learn More Section -->
 ## <a id="learn-more"></a>Learn More
 
-<a href="https://deployed-app-url.com" class="button button-green">View Deployed App</a>
+<a href="https://astonishing-gingersnap-390921.netlify.app/" class="button button-green">View Deployed App</a>
 
 - [GitHub Repo](https://github.com/FrancKenya/Hospital_web_Clone1)
-- [Deployed App](https://deployed-app-url.com)
+- [Deployed App](https://astonishing-gingersnap-390921.netlify.app/)

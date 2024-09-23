@@ -15,7 +15,7 @@
         </div>
         <div class="Call">
           <img src="../static/images/phone-call.png" alt="call icon" />
-          <a href="tel:+254720269453">Contact US</a>
+          <a href="{{ url_for('contact.contact') }}">Contact US</a>
         </div>
         <div class="social-media-images">
           <a href="https://www.facebook.com/frankgwaihiga1" target="_blank">
@@ -38,30 +38,33 @@
         <ul class="nav-links">
           <li><a href="#">HOME</a></li>
           <li class="dropdown">
-            <a href="services.html" class="dropbtn">
+            <a href="{{ url_for('services.services') }}" class="dropbtn">
               SERVICES
-              <img src="../static/images/down-arrow.png" alt="down arrow"
-            /></a>
+              <img
+                src="{{ url_for('static', filename='images/down-arrow.png') }}"
+                alt="down arrow"
+              />
+            </a>
             <div class="dropdown-content">
-              <a href="./services.html#inpatient">In Patient</a>
-              <a href="./services.html#outpatient">Out Patient</a>
+              <a href="{{ url_for('services.services') }}#inpatient"
+                >In Patient</a
+              >
+              <a href="{{ url_for('services.services') }}#outpatient"
+                >Out Patient</a
+              >
             </div>
           </li>
           <li class="dropdown">
-            <a href="contact.html" class="dropbtn">CONTACTS</a>
-            <div class="dropdown-content">
-              <a href="./contact.html"></a>
-            </div>
-          </li>
-          <li class="dropdown">
-            <a href="./branches.html" class="dropbtn">
+            <a href="{{ url_for('branches.branches') }}" class="dropbtn">
               BRANCHES
-              <img src="../static/images/down-arrow.png" alt=""
+              <img
+                src="{{ url_for('static', filename='images/down-arrow.png') }}"
+                alt=""
             /></a>
             <div class="dropdown-content">
-              <a href="./branches.html#mombasa">Mombasa</a>
-              <a href="./branches.html#kisumu">Kisumu</a>
-              <a href="./branches.html#nakuru">Nakuru</a>
+              <a href="{{ url_for('branches.branches') }}#nairobi">Nairobi</a>
+              <a href="{{ url_for('branches.branches') }}#mombasa">Mombasa</a>
+              <a href="{{ url_for('branches.branches') }}#kisumu">Kisumu</a>
             </div>
           </li>
         </ul>
@@ -135,7 +138,9 @@
             our patients 24/7. We also have other branches in other regions
             within the country.
           </p>
-          <a href="./services.html" class="welcome-btn">Learn More</a>
+          <a href="{{ url_for('services.services') }}" class="welcome-btn"
+            >Learn More</a
+          >
         </div>
       </section>
       <section class="feedback">
@@ -170,7 +175,9 @@
         <div class="h2-container">
           <div class="left">
             <h2>Visit our Branches</h2>
-            <a href="./branches.html" class="visit-btn">View</a>
+            <a href="{{ url_for('branches.branches') }}" class="visit-btn"
+              >View</a
+            >
           </div>
           <div class="right">
             <h2>Book an Appointment</h2>
