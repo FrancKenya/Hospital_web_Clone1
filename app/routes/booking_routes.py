@@ -132,3 +132,22 @@ def doctor_view():
         selected_time=selected_time, selected_service=selected_service,
         selected_branch=selected_branch)
 
+
+# Set a secret word for doctor access (can be moved to a config file)
+SECRET_WORD = "injil"
+
+# Route to handle doctor access
+@booking_routes.route('/doctor-login', methods=['POST'])
+def doctor_login():
+    entered_password = request.form.get('secret_word')
+
+    # Check if the entered password matches the secret word
+    if entered_password == SECRET_WORD:
+        # Redirect to the doctor view page
+        return redirect(url_for('bookings.doctor_view'))
+    else:
+        # Show an error message if the password is incorrect
+        flash('Incorrect secret word. Please try again.', 'error')
+        return redirect(url_for('home.home'))  # Redirect back to the homepage
+
+

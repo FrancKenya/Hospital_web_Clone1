@@ -512,3 +512,43 @@ section.visit-us {
     text-align: center;
     padding: 20px;
 }
+
+footer p {
+    margin: 0;
+  }
+
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: blue;
+    color: white;
+  }
+  
+  .doctor-access-form {
+    margin-top: 10px;
+  }
+  
+  .doctor-access-form input {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    margin-right: 10px;
+  }
+  
+  .doctor-access-form button {
+    padding: 10px;
+    background-color: white;
+    color: blue;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .doctor-access-form button:hover {
+    background-color: #008000;
+    color: white;
+  }
+  

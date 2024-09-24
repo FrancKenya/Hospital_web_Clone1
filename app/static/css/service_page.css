@@ -1,0 +1,356 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f5f5f5;
+  }
+
+  h1, h2, h3 {
+    color: #004d99;
+    margin: 10px 0;
+  }
+
+  p {
+    color: #333;
+    line-height: 1.6;
+  }
+
+  a {
+    text-decoration: none;
+    color: #004d99;
+  }
+
+  a:hover {
+    color: #0088cc;
+  }
+  .header-container {
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+    background-color: blue;
+    color: white;
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+.head {
+    color: blue;
+}
+
+.social-media-images a {
+    margin-right: 10px;
+    display: inline-block;
+}
+
+.social-media-images img {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    padding: auto;
+    float: right;
+    box-sizing: border-box;
+    gap: auto;
+    margin-right: 10px;
+}
+.social-media-images a img {
+    transition: all 0.3s ease-in-out;
+}
+
+.social-media-images a:hover img {
+    opacity: 0.7;
+    background-color: #3e8e41;
+    border-radius: 2px;
+}
+
+
+.Call img {
+    width: 20px;
+    height: 20px;
+    float: left;
+}
+.Email img {
+    width: 20px;
+    height: 20px;
+    float: left;
+}
+
+.Email, .Call {
+    display: inline-block;
+    margin-left: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+}
+
+.Email a, .Call a {
+    color: white;
+    text-decoration: none;
+    margin-left: 15px;
+    font-weight: bold;
+}
+
+.Email a:hover, .Call a:hover {
+    text-decoration: underline;
+}
+
+header {
+    background-color: blue;
+}
+.nav-links {
+    display: flex;
+    list-style-type: none;
+}
+
+main {
+    padding-top: 30px;
+    padding-bottom: 100px;
+}
+
+.dropdown img {
+    width: 12px;
+    height: 12px;
+}
+
+.nav-links li {
+    margin-right: 10px;
+    float: left;
+}
+.nav-links a {
+    text-decoration: black;
+    color: black;
+    font-size: 12px;
+    padding: 10px;
+    font-weight: bold;
+    display: block;
+    font-style: normal;
+}
+.dropbtn {
+    cursor: pointer;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: blue;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    display: block;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.dropdown-content a:hover {
+    background-color: #3e8e41;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    background-color: #000;
+  }
+
+  .hero img.dimmed-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.5;
+  }
+
+  .hero .overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+/* Services Section */
+.services-section {
+    padding: 40px 20px;
+    background-color: white;
+  }
+
+  .services-section h2 {
+    text-align: center;
+    font-size: 28px;
+    color: black;
+    margin-bottom: 30px;
+  }
+
+  .service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+  }
+
+  .service-item {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+
+  .service-item img {
+    max-width: 50%;
+    border-radius: 8px;
+  }
+
+  .service-item h3 {
+    margin: 15px 0;
+    font-size: 22px;
+  }
+
+  .service-item p {
+    color: #666;
+  }
+
+  .service-item .read-more {
+    color: blue;
+    font-weight: bold;
+  }
+
+  .service-item .read-more:hover {
+    color: blue;
+  }
+
+  .service-item img:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+  }
+/* Media Queries */
+@media (max-width: 768px) {
+    .nav-links {
+      float: none;
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .service-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  section.visit-us {
+    position: relative;
+    width: 100%;
+    min-height: 500px; /* Ensure the section has enough height */
+    background-image: url('../images/hospital-visit.jpg'); /* Use your image path */
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: brightness(90%);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px; /* Adding padding to avoid elements being cut off */
+    overflow: hidden;
+    margin-top: 50px;
+    margin-bottom: -50px;
+  }
+
+  .visit-us h1 {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: white;
+    z-index: 1;
+    margin-bottom: 40px;
+  }
+
+  .visit-us .h2-container {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    z-index: 1;
+    margin-top: 20px;
+    flex-wrap: wrap; /* Allow wrapping if needed */
+  }
+
+  .h2-container > div {
+    text-align: center;
+    flex: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px; /* Add margin to avoid overlapping */
+  }
+
+  .visit-us h2 {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 10px; /* Reduced margin to make space for buttons */
+  }
+
+  .visit-us .visit-btn {
+    padding: 10px 35px;
+    text-decoration: solid;
+    color: white;
+    background-color: blue;
+    border-radius: 5px;
+    z-index: 1;
+    font: bold;
+    margin-top: 10px;
+    display: block;
+    position: relative; /* Ensure it's positioned relative to its parent */
+  }
+
+  .visit-us .appointment-btn {
+    padding: 10px 20px;
+    text-decoration: none;
+    color: white;
+    font: bold;
+    background-color: blue;
+    border-radius: 5px;
+    z-index: 1;
+    margin-top: 10px;
+    display: block;
+    position: relative; /* Ensure it's positioned relative to its parent */
+  }
+  section.visit-us::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay to make text readable */
+    z-index: 0;
+  }
+
+  footer {
+    background-color: blue;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+footer p {
+    margin: 0;
+    color: white;
+  }

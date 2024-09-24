@@ -3,69 +3,248 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Services - Neema Hospital</title>
+    <title>Services - Injil Hospital</title>
     <link
-      rel="stylesheet"
-      href="{{ url_for('static', filename='css/style.css') }}"
+      rel="stylesheet" href="../static/css/service_page.css"
     />
   </head>
   <body>
-    <header>
+    <div class="header-container">
+      <div class="Email">
+        <img src="../static/images/email.png" alt="email icon" />
+        <a href="mailto:info@injilhospital.com">info@injilhospital.com</a>
+      </div>
+      <div class="Call">
+        <img src="../static/images/phone-call.png" alt="call icon" />
+        <a href="{{ url_for('branches.branches') }}">Contact US</a>
+      </div>
+      <div class="social-media-images">
+        <a href="https://www.facebook.com/frankgwaihiga1" target="_blank">
+          <img src="../static/images/facebook-icon.png" alt="facebook logo" />
+        </a>
+        <a href="https://www.instagram.com" target="_blank">
+          <img src="../static/images/instagram.png" alt="instagram logo" />
+        </a>
+        <a href="https://www.tiktok.com" target="_blank">
+          <img src="../static/images/tiktok-icon.png" alt="tiktok logo" />
+        </a>
+        <a href="https://twitter.com" target="_blank">
+          <img src="../static/images/twitter.png" alt="twitter logo" />
+        </a>
+      </div>
+    </div>
+  </header>
+    <main>
       <nav>
-        <div class="logo">
-          <h1>Neema Hospital</h1>
-        </div>
         <ul class="nav-links">
-          <li><a href="./home.html">Home</a></li>
-          <li><a href="./services.html">Services</a></li>
-          <li><a href="./branches.html">Branches</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="{{ url_for('home.home')}}">HOME</a></li>
+          <li class="dropdown">
+            <a href="{{ url_for('services.services') }}" class="dropbtn">
+              SERVICES
+              <img
+                src="{{ url_for('static', filename='images/down-arrow.png') }}"
+                alt="down arrow"
+              />
+            </a>
+            <div class="dropdown-content">
+              <a href="{{ url_for('services.services') }}#inpatient"
+                >In Patient</a
+              >
+              <a href="{{ url_for('services.services') }}#outpatient"
+                >Out Patient</a
+              >
+            </div>
+          </li>
+          <li class="dropdown">
+            <a href="{{ url_for('branches.branches') }}" class="dropbtn">
+              BRANCHES
+              <img
+                src="{{ url_for('static', filename='images/down-arrow.png') }}"
+                alt=""
+            /></a>
+            <div class="dropdown-content">
+              <a href="{{ url_for('branches.branches') }}#nairobi">Nairobi</a>
+              <a href="{{ url_for('branches.branches') }}#mombasa">Mombasa</a>
+              <a href="{{ url_for('branches.branches') }}#kisumu">Kisumu</a>
+            </div>
+          </li>
         </ul>
       </nav>
-    </header>
-    <main>
-      <section class="hero">
-        <img
-          src="{{ url_for('static', filename='images/hospital.jpg') }}"
-          alt="Hospital"
-        />
-        <a href="/services" class="btn">Our Services</a>
+    <section class="hero">
+      <img
+        src="../static/images/hospital.jpg"
+        alt="Our Services"
+        class="dimmed-image"
+      />
+      <h1 class="overlay-text">Our Services</h1>
+    </section>
+
+    <!-- Outpatient Services Section -->
+    <section class="services-section">
+      <h2>Outpatient Services</h2>
+      <div class="service-grid">
+        <!-- General Consultation -->
+        <div class="service-item">
+          <img src="../static/images/doctor-consultation.png"
+            alt="General Consultation"/>
+          <h3>General Consultation</h3>
+          <p>
+            Our general consultation service offers expert primary care from
+            experienced doctors.
+            <span class="more-text"
+              >With a focus on patient-centered care, we ensure thorough
+              check-ups and personalized treatments.</span
+            >
+            <a href="#" class="read-more">Read More</a>
+          </p>
+        </div>
+        <div class="service-item">
+          <img src="../static/images/microscope.png"
+            alt="Laboratory Services"/>
+          <h3>Laboratory Services</h3>
+          <p>
+            Our laboratory offers advanced diagnostic services.
+            <span class="more-text"
+              >We provide 24/7 services for a wide range of tests.</span>
+              <a href="#" class="read-more">Read More</a>
+          </p>
+        </div>
+        <!-- Pharmacy Services -->
+        <div class="service-item">
+          <img src="../static/images/drug.png" alt="Pharmacy Services"/>
+            <h3>Pharmacy Services</h3>
+            <p>
+              Our in-house pharmacy provides prescription and over-the-counter
+              medications.
+              <span class="more-text"
+              >We ensure all medicines are available to facilitate continuity in
+              treatment.</span>
+              <a href="#" class="read-more">Read More</a>
+            </p>
+          </div>
+        </div>
       </section>
-      <h1>Our Services</h1>
-      <h2 id="inpatient">In patient:</h2>
+
+    <!-- Inpatient and Specialized Care Section -->
+    <section class="services-section">
+      <h2>Inpatient and Specialized Care Services</h2>
+      <div class="service-grid">
+        <!-- List of inpatient services -->
+        <div class="service-item">
+          <img
+            src="../static/images/x-rays.png"alt="radiology Services"/>
+            <h3>Radiology Services</h3>
+            <p>
+            We carry out advanced radiology services at an affordable price.
+            <span class="more-text"
+              >We provide 24/7 X-ray, and scanning services. Our services are highly recommended. </span
+            >
+            <a href="#" class="read-more">Read More</a>
+          </p>
+        </div>
+        <div class="service-item">
+          <img
+            src="../static/images/dental-service.png" alt="Dental and Eye Care Services"/>
+          <h3>Dental and Eye Care Services</h3>
+          <p>
+            Our dental specialized services are
+            <span class="more-text"
+              >highly recommended and affordable to the patients. We also offer eye care.</span
+            >
+            <a href="#" class="read-more">Read More</a>
+          </p>
+        </div>
+        <div class="service-item">
+          <img
+          src="../static/images/biologist.png"
+          alt="Pathology Services"
+        />
+        <h3>Pathology Services</h3>
+        <p>
+          Pathology services are always available in all our
+          <span class="more-text"
+            >branches. We provide 24/7 services.</span
+          >
+          <a href="#" class="read-more">Read More</a>
+        </p>
+      </div>
+      <div class="service-item">
+        <img
+        src="../static/images/cancer-ribbon.png"
+        alt="Ophthalmology, Oncology"
+      />
+      <h3>Ophthalmology and Oncology</h3>
       <p>
-        Neema hospital has a general ward, an executive suite and exclusive
-        paediatric ward for children. The rooms are well designed to provide
-        comfort and not to cause any infections and reinfections to our
-        patients. Our infrastructure gives the optimum environment to facilitate
-        recupwration
+        All our branches offers ophthalmology and
+        <span class="more-text"
+          >oncology services. We provide 24/7 services.</span
+        >
+        <a href="#" class="read-more">Read More</a>
       </p>
-      <p>
-        We have an Intensive care unit which is a state of the art 30 bed
-        facility
-      </p>
-      <h2 id="outpatient">Out patient</h2>
-      <h4>Ambulance services</h4>
-      <p>
-        24 hour ambulance services: We have an around the clock ambulance system
-        that is available within institutions and on the road. The service is
-        available to everyone within Nairobi and can be contacted through
-        calling our toll free number provided in the contact section
-      </p>
-      <h5>24 hour laboratory services</h5>
-      <p>
-        Neema hospital has state of the art diagnostic equipments and well
-        experienced personnel to carry out laboratory services. We provide a 24
-        hour services system whereby you can drop by, and get your result
-        anytime
-      </p>
-      <p>
-        Besides that we carry dentistry, accident and emergency services,
-        dialysis, hydrotherapy, paediatric, pharmacy,and plastic surgery
-      </p>
-    </main>
-    <footer>
-      <p>&copy; 2024 Neema Hospital. All rights reserved.</p>
+    </div>
+    <div class="service-item">
+      <img
+      src="../static/images/treatment.png"
+      alt=""
+    />
+    <h3>Cancer diagnosis and treatment</h3>
+    <p>
+      All our branches offers cancer diagnosis and
+      <span class="more-text"
+        >treatment. Our cancer treatment departnent is rated the best in the country.
+      </span>
+      >
+      <a href="#" class="read-more">Read More</a>
+    </p>
+  </div>
+  <div class="service-item">
+    <img
+    src="../static/images/mental-health.png"
+    alt=""/>
+    <h3>Psychiatry and Mental Health</h3>
+    <p>
+      All our branches offers Psychiatry and
+      <span class="more-text">
+        Mental Health services. We provide both inpatient and outpatient services in this field depending on diagnosis.
+      </span>
+      <a href="#" class="read-more">Read More</a>
+    </p>
+  </div>
+  <div class="service-item">
+    <img
+    src="../static/images/kidney.png"
+    alt=""/>
+    <h3>Dialysis Services</h3>
+    <p>
+      All our branches offer
+      <span class="more-text">
+        dialysis clinic for both outpatient and outpatient patients. You can book with us below.
+      </span>
+      <a href="#" class="read-more">Read More</a>
+    </p>
+  </div>
+</div>
+</section>
+<section class="visit-us">
+  <h1> Book an Appointment with us or Contact us Today!</h1>
+  <div class="h2-container">
+    <div class="left">
+      <h2>Our Contacts</h2>
+      <a href="{{ url_for('branches.branches') }}" class="visit-btn"
+        >View</a>
+    </div>
+    <div class="right">
+      <h2>Book an Appointment</h2>
+      <a href="{{ url_for('bookings.show_booking_form') }}" class="appointment-btn"
+        >Book Now</a>
+    </div>
+  </div>
+</section>
+</main>
+  <footer>
+    <p>&copy; 2024 Injil Hospital. All rights reserved.</p>
+  </footer>
+    <script src="../static/js/script.js"></script>
     </footer>
   </body>
 </html>

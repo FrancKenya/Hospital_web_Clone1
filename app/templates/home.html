@@ -15,7 +15,7 @@
         </div>
         <div class="Call">
           <img src="../static/images/phone-call.png" alt="call icon" />
-          <a href="{{ url_for('contact.contact') }}">Contact US</a>
+          <a href="{{ url_for('branches.branches')}}">Contact US</a>
         </div>
         <div class="social-media-images">
           <a href="https://www.facebook.com/frankgwaihiga1" target="_blank">
@@ -47,10 +47,10 @@
             </a>
             <div class="dropdown-content">
               <a href="{{ url_for('services.services') }}#inpatient"
-                >In Patient</a
+                >In-Patient</a
               >
               <a href="{{ url_for('services.services') }}#outpatient"
-                >Out Patient</a
+                >Specialized Services</a
               >
             </div>
           </li>
@@ -181,13 +181,32 @@
           </div>
           <div class="right">
             <h2>Book an Appointment</h2>
-            <a href="./appointment.html" class="appointment-btn">Book Now</a>
+            <a
+              href="{{ url_for('bookings.show_booking_form') }}"
+              class="appointment-btn"
+              >Book Now</a
+            >
           </div>
         </div>
       </section>
     </main>
     <footer>
       <p>&copy; 2024 Injil Hospital. All rights reserved.</p>
+      <form
+        action="{{ url_for('bookings.doctor_login') }}"
+        method="POST"
+        class="doctor-access-form"
+      >
+        <label for="secret-word">Doctor Access:</label>
+        <input
+          type="password"
+          id="secret-word"
+          name="secret_word"
+          placeholder="Enter Secret Word"
+          required
+        />
+        <button type="submit">Enter</button>
+      </form>
     </footer>
     <script src="../static/js/script.js"></script>
   </body>

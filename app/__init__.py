@@ -17,6 +17,7 @@ def create_app():
 
     db.init_app(app)
     migrate.init_app(app, db)
+    
 
     with app.app_context():
         from .routes import home_routes, service_routes, contact_routes

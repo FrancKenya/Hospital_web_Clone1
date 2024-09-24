@@ -133,3 +133,17 @@ document.addEventListener("DOMContentLoaded", function () {
     welcomeSection.classList.add("show-button");
   }, 7500);
 });
+
+document.querySelectorAll(".read-more").forEach((link) => {
+  link.addEventListener("click", function (e) {
+    e.preventDefault();
+    const moreText = this.previousElementSibling;
+    moreText.style.display =
+      moreText.style.display === "none" ? "inline" : "none";
+  });
+});
+
+document.getElementById("doctor-access-link").addEventListener("click", function() {
+  var form = document.getElementById("doctor-access-form");
+  form.style.display = form.style.display === "none" ? "block" : "none";
+});

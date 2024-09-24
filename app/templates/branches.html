@@ -3,49 +3,129 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Branches - Neema Hospital</title>
-    <link rel="stylesheet" href="../static/css/style.css" />
-    />
+    <title>Injeel Hospital</title>
+    <link rel="stylesheet" href="../static/css/branch_page.css" />
   </head>
   <body>
     <header>
-      <nav>
-        <div class="logo">
-          <h1>Neema Hospital</h1>
+      <div class="header-container">
+        <div class="Email">
+          <img src="../static/images/email.png" alt="email icon" />
+          <a href="mailto:info@injilhospital.com">info@injilhospital.com</a>
         </div>
-        <ul class="nav-links">
-          <li><a href="./home.html">Home</a></li>
-          <li><a href="./services.html">Services</a></li>
-          <li><a href="./branches.html">Branches</a></li>
-          <li><a href="./contact.html">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
-    <main>
-      <h1>Our Branches</h1>
-      <div class="branches-list">
-        <div class="branch">
-          <h2 id="mombasa">Mombasa</h2>
-          <p>Address: 1234 Mama Ngina, Mombasa, Kenya</p>
-          <p>Phone: +254 20 1234567</p>
-          <p>Email: info@neemahospitalmombasa.com</p>
+        <div class="Call">
+          <img src="../static/images/phone-call.png" alt="call icon" />
+          <a href="{{ url_for('branches.branches')}}">Contact US</a>
         </div>
-        <div class="branch">
-          <h2 id="kisumu">Kisumu</h2>
-          <p>Address: 5678 Kenyatta avenue, Kisumu, Kenya</p>
-          <p>Phone: +254 20 2345678</p>
-          <p>Email: info@neemahospitalkisumu.com</p>
-        </div>
-        <div class="branch">
-          <h2 id="nakuru">Nakuru</h2>
-          <p>Address: 91011 Muindi rd, Nakuru, Kenya</p>
-          <p>Phone: +254 20 3456789</p>
-          <p>Email: info@neemahospitalnakuru.com</p>
+        <div class="social-media-images">
+          <a href="https://www.facebook.com/frankgwaihiga1" target="_blank">
+            <img src="../static/images/facebook-icon.png" alt="facebook logo" />
+          </a>
+          <a href="https://www.instagram.com" target="_blank">
+            <img src="../static/images/instagram.png" alt="instagram logo" />
+          </a>
+          <a href="https://www.tiktok.com" target="_blank">
+            <img src="../static/images/tiktok-icon.png" alt="tiktok logo" />
+          </a>
+          <a href="https://twitter.com" target="_blank">
+            <img src="../static/images/twitter.png" alt="twitter logo" />
+          </a>
         </div>
       </div>
+    </header>
+    <main>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="{{url_for('home.home')}}">HOME</a></li>
+          <li class="dropdown">
+            <a href="{{ url_for('services.services') }}" class="dropbtn">
+              SERVICES
+              <img
+                src="{{ url_for('static', filename='images/down-arrow.png') }}"
+                alt="down arrow"
+              />
+            </a>
+            <div class="dropdown-content">
+              <a href="{{ url_for('services.services') }}#inpatient"
+                >In Patient</a
+              >
+              <a href="{{ url_for('services.services') }}#outpatient"
+                >Out Patient</a
+              >
+            </div>
+          </li>
+          <li class="dropdown">
+            <a href="{{ url_for('branches.branches') }}" class="dropbtn">
+              BRANCHES
+              <img
+                src="{{ url_for('static', filename='images/down-arrow.png') }}"
+                alt=""
+            /></a>
+            <div class="dropdown-content">
+              <a href="{{ url_for('branches.branches') }}#nairobi">Nairobi</a>
+              <a href="{{ url_for('branches.branches') }}#mombasa">Mombasa</a>
+              <a href="{{ url_for('branches.branches') }}#kisumu">Kisumu</a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+      <section class="hero">
+        <img
+          src="../static/images/hospital.jpg"
+          alt="Our Branches"
+          class="dimmed-image"
+        />
+        <h1 class="overlay-text">Our Branches</h1>
+      </section>
+
+      <!-- Branches Section -->
+      <section class="branches-section">
+        <div class="branch-grid">
+          <!-- Nairobi Branch -->
+          <div class="branch-item">
+            <h3>Nairobi Branch</h3>
+            <p>
+              Address: 1234 Mbagathi Road, Nairobi<br />
+              Phone: 0722 000 111<br />
+              Email: nairobi@injeellhospital.com Email2: info@injilhospital.com
+            </p>
+          </div>
+
+          <!-- Mombasa Branch -->
+          <div class="branch-item">
+            <h3>Mombasa Branch</h3>
+            <p>
+              Address: 5678 Mombasa Road, Mombasa<br />
+              Phone: 0733 111 222<br />
+              Email: mombasa@injeelhospital.com
+            </p>
+          </div>
+
+          <!-- Kisumu Branch -->
+          <div class="branch-item">
+            <h3>Kisumu Branch</h3>
+            <p>
+              Address: Oginga Road, Kisumu<br />
+              Phone: 0744 222 333<br />
+              Email: kisumu@injeelhospital.com
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Book Now Button -->
+      <section class="book-now-section">
+        <h2>Ready to Book an Appointment?</h2>
+        <a
+          href="{{ url_for('bookings.show_booking_form') }}"
+          class="btn btn-primary"
+          >Book Now</a
+        >
+      </section>
     </main>
     <footer>
-      <p>&copy; 2024 Neema Hospital. All rights reserved.</p>
+      <p>&copy; 2024 Injil Hospital. All rights reserved.</p>
     </footer>
+    <script src="../static/js/script.js"></script>
   </body>
 </html>
