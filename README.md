@@ -1,58 +1,109 @@
-Hospital Management Website
-This is a web-based project for managing the services, bookings, and branches of a hospital. The project is designed to provide users with easy access to hospital information such as the available services, branches, and contact details. Additionally, it includes an intuitive front-end interface and integrated back-end management system.
+Injeel Hospital - Hospital Management System
+
+Introduction
+
+Injeel Hospital is a modern hospital management system designed to streamline the booking of medical services, allowing doctors and patients to interact seamlessly. The application enables patients to book services at different branches, manage their appointments, and access medical history. Doctors can view appointments and provide diagnoses, prescriptions, and referrals directly within the system.
+
+The project was developed as a full-stack web application using Flask for the backend and a custom frontend.
+
+A link for a demo to be added
+
+Check out the final project blog post here.
+linkedin.com
 
 Author
 Francis Waihiga
+LinkedIn Profile
 
-Project Overview
-This project is structured with the following key sections:
+Table of Contents
+Project Name
+Introduction
+Features
+Installation
+Usage
+Contributing
+Related Projects
+Licensing
+Screenshot
 
-Front-End (HTML/CSS/JS):
+Features
 
-Header Section: Contains social media links (Facebook, Instagram, TikTok, X), contact details (Email, Call Us), styled with CSS to fit the hospital's theme.
-Navigation Bar: Provides access to major sections of the website (Home, Services, Contacts, Branches) with dropdown menus for some items.
-Carousel: Displays images related to the hospital, with a zoom-out transition effect that transitions into a blue background.
-Responsive Design: The project is styled to ensure compatibility with various screen sizes, especially on mobile devices.
-Back-End (Flask/Python):
+Service Booking: Patients can book medical services such as general consultations, pharmacy services, laboratory tests, and more.
 
-BaseModel Class: This class provides the foundation for all models in the project, including common methods and attributes like id, created_at, and updated_at.
-Service Class: Represents the different services offered by the hospital. Each service has a name, description, and relationship with bookings.
-Booking Class: Handles the booking of services by patients. Each booking is tied to a specific service.
-Database Integration: SQLAlchemy is used for ORM, with an SQLite database for development purposes.
+Branch Selection: Patients can select specific branches (Nairobi, Mombasa, Kisumu) during booking.
 
-Front-End Design
-Header:
+Doctor View: Doctors can filter bookings by date, time, service, and branch.
 
-The header contains links to social media icons (Facebook, Instagram, TikTok, and X) on the left side.
-Contact details (Email, Call Us) are on the right side.
-The header background is green, with the text and icons styled in white.
-Navigation Menu:
+Secret Password Access: Doctors can access their view using a secret word known to them.
 
-The navigation menu is hidden by default under the header section but contains links to various sections of the hospital, such as Services, Contacts, and Branches.
-Each menu item, such as "Branches," includes a dropdown with additional links.
-Arrows are placed next to dropdown items to indicate more options.
-Carousel:
+Medical History: Doctors can add diagnoses, prescriptions, and referrals for patients.
 
-A carousel section displays hospital-related images with a zoom-out transition effect. The empty space during the transition is filled with a blue background.
-Back-End Overview
-BaseModel:
+Service Categories: Services are categorized into outpatient, inpatient, and specialty clinics for easy navigation.
 
-Common attributes like id, created_at, and updated_at are stored here.
-All other models inherit from BaseModel.
-Service Model:
+Installation
+To get the project running locally, follow these steps:
 
-Represents the services offered by the hospital.
-Contains a name, description, and relationships with the Booking class.
-Booking Model:
+Prerequisites
+Ensure you have the following installed:
 
-Handles the booking information for the services.
-Links patients with a specific hospital service.
+Python 3.x
+Git
+Virtualenv (optional but recommended)
 
-Technologies Used
-Front-End: HTML5, CSS3, JavaScript
-Back-End: Flask, Python, SQLAlchemy
-Database: SQLite (for development)
-Future Improvements
-Implement user authentication for secure booking.
-Add more dynamic content and optimize performance.
-Integrate with a production-grade database system (e.g., PostgreSQL).
+Steps
+
+Clone the repository:
+
+git clone <https://github.com/francis-waihiga/Hospital_web_clone1.git>
+Navigate to the project directory:
+cd Hospital_web_clone1
+
+Create and activate a virtual environment (optional):
+python3 -m venv venv
+source venv/bin/activate  # For Windows, use venv\Scripts\activate
+
+Install dependencies:
+pip install -r requirements.txt
+
+Set environment variables (create a .env file in the root directory):
+SECRET_KEY=your-secret-key
+DATABASE_URL=sqlite:///hospital.db
+
+Run database migrations:
+flask db upgrade
+Run the application:
+flask run
+
+Visit the app in your browser at:
+<http://127.0.0.1:5000>
+
+Usage
+
+For Patients
+Book an Appointment: Select your desired service and branch, then book a session based on availability.
+Check Booking Status: Patients can view their current booking status and rebook if necessary.
+
+For Doctors
+Doctor's View: Log in with the secret password at the bottom of the homepage to access patient bookings. Filter by service, branch, or date to view appointment details.
+Update Patient Records: Add diagnoses, prescriptions, or referrals during or after patient visits.
+
+Contributing
+Contributions to this project are welcome. To contribute:
+
+Fork the repository.
+Create a new branch (git checkout -b feature-branch-name).
+Make your changes and commit them (git commit -m "description of changes").
+Push to the branch (git push origin feature-branch-name).
+Submit a pull request.
+
+Related Projects
+Check out similar projects:
+
+Hospital Management System
+Medical Booking System
+Licensing
+This project is licensed under the MIT License. See the LICENSE file for details.
+
+Screenshot
+![alt text](<../Hospital_web_Clone1/docs/assets/images/filtering.jpg>)
+![alt text](<../Hospital_web_Clone1/docs/assets/images/filtering2.jpg>)
