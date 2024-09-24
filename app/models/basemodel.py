@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 
 from datetime import datetime
-from flask_sqlalchemy import SQLAlchemy
 from app import db
 
 class BaseModel(db.Model):
