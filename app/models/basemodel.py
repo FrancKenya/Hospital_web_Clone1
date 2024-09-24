@@ -1,9 +1,11 @@
 #!/usr/bin/python3
 
 from datetime import datetime
+from flask_sqlalchemy import SQLAlchemy
 from app import db
 
 class BaseModel(db.Model):
+    """Inherited by other classes as the parent class """
     __abstract__ = True  # Don't create a table for this class
 
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
