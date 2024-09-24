@@ -12,7 +12,8 @@ def create_app():
     """This function creates and returns the app"""
     app = Flask(__name__)
     app.secret_key = os.urandom(24)
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///hospital.db'
+    app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv(
+        'DATABASE_URL', 'sqlite:///hospital.db')
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
     db.init_app(app)
