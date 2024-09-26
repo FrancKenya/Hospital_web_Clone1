@@ -25,11 +25,13 @@ def create_app():
         from .routes import branch_routes
         from .routes.booking_routes import booking_routes
         from .routes.booking_routes import populate_routes
+        from .routes.migration_routes import migrate_db
         app.register_blueprint(home_routes.bp)
         app.register_blueprint(service_routes.bp)
         app.register_blueprint(contact_routes.bp)
         app.register_blueprint(branch_routes.bp)
         app.register_blueprint(booking_routes)
         app.register_blueprint(populate_routes)
+        app.register_blueprint(migrate_db)
 
     return app
