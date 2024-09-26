@@ -15,6 +15,7 @@ def create_app():
     app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv(
         'DATABASE_URL', 'sqlite:///hospital.db')
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+    app.secret_key = 'injil'
 
     db.init_app(app)
     migrate.init_app(app, db)
@@ -25,6 +26,7 @@ def create_app():
         from .routes import branch_routes
         from .routes.booking_routes import booking_routes
         from .routes.booking_routes import populate_routes
+        from .routes.migration_routes import migrate_routes
 
         app.register_blueprint(home_routes.bp)
         app.register_blueprint(service_routes.bp)
@@ -32,5 +34,6 @@ def create_app():
         app.register_blueprint(branch_routes.bp)
         app.register_blueprint(booking_routes)
         app.register_blueprint(populate_routes)
+        app.register_blueprint(migrate_routes)
 
     return app
