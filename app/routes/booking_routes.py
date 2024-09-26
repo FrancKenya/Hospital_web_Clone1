@@ -154,7 +154,7 @@ def doctor_login():
 
 populate_routes = Blueprint('populate_routes', __name__)
 
-@populate_routes.route('/populate-db')
+@populate_routes.route('/populate_routes')
 def populate_db():
     # Check if already populated (to avoid multiple insertions)
     if Branch.query.first() and Service.query.first():
