@@ -18,16 +18,18 @@ def create_app():
 
     db.init_app(app)
     migrate.init_app(app, db)
-    
+
 
     with app.app_context():
         from .routes import home_routes, service_routes, contact_routes
         from .routes import branch_routes
         from .routes.booking_routes import booking_routes
+        from .routes.migrations_routes import migration_bp
         app.register_blueprint(home_routes.bp)
         app.register_blueprint(service_routes.bp)
         app.register_blueprint(contact_routes.bp)
         app.register_blueprint(branch_routes.bp)
         app.register_blueprint(booking_routes)
+        app.register_blueprint(migration_bp)
 
     return app
