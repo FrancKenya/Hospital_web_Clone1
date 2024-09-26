@@ -21,7 +21,7 @@ class Booking(BaseModel):
     service_id = db.Column(db.Integer, db.ForeignKey('services.id', name='fk_bookings_service_id'), nullable=False)
     services = db.relationship("Service", back_populates="bookings")
     branch_id = db.Column(
-        db.String(60), db.ForeignKey(
+        db.Integer, db.ForeignKey(
             'branches.id', name='fk_bookings_branch_id'), nullable=False)
     branch = db.relationship("Branch", back_populates="bookings")
 

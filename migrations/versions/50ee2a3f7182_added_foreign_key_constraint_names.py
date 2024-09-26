@@ -22,7 +22,7 @@ def upgrade():
         batch_op.add_column(sa.Column('patient_age', sa.Integer(), nullable=False))
         batch_op.add_column(sa.Column('patient_gender', sa.String(length=10), nullable=False))
         batch_op.add_column(sa.Column('appointment_time', sa.DateTime(), nullable=False))
-        batch_op.add_column(sa.Column('branch_id', sa.String(length=60), nullable=False))
+        batch_op.add_column(sa.Column('branch_id', sa.Integer(), nullable=False))
         batch_op.alter_column('service_id',
                existing_type=sa.VARCHAR(length=60),
                type_=sa.Integer(),
