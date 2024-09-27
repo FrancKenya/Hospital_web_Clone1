@@ -37,7 +37,7 @@ Secret Password Access: Doctors can access their view using a secret word known 
 
 Service Categories: Services are categorized into outpatient, inpatient, and specialty clinics for easy navigation.
 
-Live demo: <https://flonnect.com/video/976ed2dbe1e4-4095-ac7c-e9987510ae0f>
+Live demo: <https://bit.ly/3Y2dmzS>
 
 Installation
 To get the project running locally, follow these steps:
