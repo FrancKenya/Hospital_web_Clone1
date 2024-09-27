@@ -1,30 +1,29 @@
-Injeel Hospital - Hospital Management System
+Injil Hospital - Hospital Management System
 
 Introduction
 
-Injeel Hospital is a modern hospital management system designed to streamline the booking of medical services, allowing doctors and patients to interact seamlessly. The application enables patients to book services at different branches, manage their appointments, and access medical history. Doctors can view appointments and provide diagnoses, prescriptions, and referrals directly within the system.
+Injil Hospital is a modern hospital management system designed to streamline the booking of medical services, allowing healthcare worers and patients to interact seamlessly. The application enables patients to book services at different branches, manage their appointments, and access medical history. Healthcare workers can view appointments and provide diagnoses, prescriptions, and referrals directly within the system.
 
-The project was developed as a full-stack web application using Flask for the backend and a custom frontend.
-
-A link for a demo to be added
+The project was developed as a full-stack web application using Flask for the backend and a custom frontend developed using HTML, CSS and JavaScript
 
 Check out the final project blog post here.
-linkedin.com
+<https://www.linkedin.com/pulse/project-overview-injeel-hospital-management-system-francis-waihiga-bodhf>
 
 Author
 Francis Waihiga
-LinkedIn Profile
+LinkedIn URL: <https://www.linkedin.com/in/francis-waihiga-476198209/>
 
 Table of Contents
-Project Name
-Introduction
-Features
-Installation
-Usage
-Contributing
-Related Projects
-Licensing
-Screenshot
+
+1. Project Name
+2. Introduction
+3. Features
+4. Installation
+5. Usage
+6. Contributing
+7. Related Projects
+8. Licensing
+9. Screenshot
 
 Features
 
@@ -36,9 +35,9 @@ Doctor View: Doctors can filter bookings by date, time, service, and branch.
 
 Secret Password Access: Doctors can access their view using a secret word known to them.
 
-Medical History: Doctors can add diagnoses, prescriptions, and referrals for patients.
-
 Service Categories: Services are categorized into outpatient, inpatient, and specialty clinics for easy navigation.
+
+Live demo: <https://flonnect.com/video/976ed2dbe1e4-4095-ac7c-e9987510ae0f>
 
 Installation
 To get the project running locally, follow these steps:
@@ -81,7 +80,6 @@ Usage
 
 For Patients
 Book an Appointment: Select your desired service and branch, then book a session based on availability.
-Check Booking Status: Patients can view their current booking status and rebook if necessary.
 
 For Doctors
 Doctor's View: Log in with the secret password at the bottom of the homepage to access patient bookings. Filter by service, branch, or date to view appointment details.
@@ -101,8 +99,9 @@ Check out similar projects:
 
 Hospital Management System
 Medical Booking System
+
 Licensing
-This project is licensed under the MIT License. See the LICENSE file for details.
+This project is open source and welcomes contributions from the community! Whether you're fixing a bug, improving documentation, or adding a new feature, your efforts are appreciated.
 
 Screenshot
 ![alt text](<../Hospital_web_Clone1/docs/assets/images/filtering.jpg>)

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Hospital Web Clone"
+title: "Hospital Web Clone - Injil Hospital Management System"
 ---
 
 <!-- Navigation Bar -->
@@ -34,7 +34,7 @@ title: "Hospital Web Clone"
   </div>
 
   <div class="feature-item">
-    <img src="./assets/images/records.jpg" alt="Records Feature" class="feature-image">
+    <img src="./assets/images/filtering 2.jpg" alt="Records Feature" class="feature-image">
     <h2>Records</h2>
     <p>Manage and review patient records efficiently. Our system provides secure access to patient history, test results, and other critical information to streamline hospital operations.</p>
   </div>
@@ -75,7 +75,7 @@ This project was developed as part of my portfolio for Holberton School. It repr
 <!-- Learn More Section -->
 ## <a id="learn-more"></a>Learn More
 
-<a href="https://astonishing-gingersnap-390921.netlify.app/" class="button button-green">View Deployed App</a>
+<a href="https://hospital-web-clone1.onrender.com/" class="button button-green">View Deployed App</a>
 
 - [GitHub Repo](https://github.com/FrancKenya/Hospital_web_Clone1)
-- [Deployed App](https://astonishing-gingersnap-390921.netlify.app/)
+- [Deployed App](https://hospital-web-clone1.onrender.com/)
