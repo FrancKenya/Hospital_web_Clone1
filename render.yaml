@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: hospital_web_clone
+    env: python
+    plan: free
+    buildCommand: |
+      pip install -r requirements.txt
+      flask db upgrade  # Apply migrations
+    startCommand: gunicorn 'app:create_app()'
+    envVars:
+      - key: FLASK_ENV
+        value: production
+    postdeploy: |
+      python3 populate_db.py

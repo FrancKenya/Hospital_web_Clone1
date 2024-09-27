@@ -12,8 +12,13 @@ def create_app():
     """This function creates and returns the app"""
     app = Flask(__name__)
     app.secret_key = os.urandom(24)
+    os.makedirs(os.path.join(app.instance_path), exist_ok=True)
+
+    # Configuration
+    basedir = os.path.abspath(os.path.dirname(__file__))
     app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv(
-        'DATABASE_URL', 'sqlite:///hospital.db')
+        'DATABASE_URL', f"sqlite:///{
+    os.path.join(basedir, '../instance/hospital.db')}")
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     app.secret_key = 'injil'
 
