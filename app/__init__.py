@@ -17,8 +17,9 @@ def create_app():
     # Configuration
     basedir = os.path.abspath(os.path.dirname(__file__))
     app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv(
-        'DATABASE_URL', f"sqlite:///{
-    os.path.join(basedir, '../instance/hospital.db')}")
+    'DATABASE_URL', f"sqlite:///{os.path.join(
+        basedir, '../instance/hospital.db')}")
+
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     app.secret_key = 'injil'
 
