@@ -12,7 +12,7 @@ class Branch(BaseModel):
     """ This class represents the branches of the hospital """
     __tablename__ = "branches"
     id = db.Column(db.Integer, primary_key=True)
-    name  = db.Column(db.String(120), nullable=False)
+    name = db.Column(db.String(120), nullable=False)
     location = db.Column(db.String(255), nullable=False)
     contacts = db.Column(db.String(120), nullable=False)
     email = db.Column(db.String(120), nullable=False)

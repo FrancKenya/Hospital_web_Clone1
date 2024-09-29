@@ -10,15 +10,18 @@ from datetime import datetime
 
 booking_routes = Blueprint('bookings', __name__)
 
+
 # Route to display the booking form
 @booking_routes.route('/bookings', methods=['GET'])
 def show_booking_form():
     """Show the booking form"""
-    services = Service.query.all()  # Retrieve available services from the database
+    services = Service.query.all()  # Retrieve available services
     branches = Branch.query.all()
-    return render_template('booking_form.html', services=services, branches=branches)  # Render the form with service options
-
+    return render_template(
+        'booking_form.html', services=services, branches=branches)  # Render
 # Route to handle booking submission
+
+
 @booking_routes.route('/bookings', methods=['POST'])
 def submit_booking():
     """Collect data to be submitted for booking"""
@@ -52,13 +55,16 @@ def submit_booking():
     # Convert appointment_time to a datetime object
     print(f"Raw appointment time input: {appointment_time}")
     try:
-        appointment_time = datetime.strptime(appointment_time, '%Y-%m-%dT%H:%M')
+        appointment_time = datetime.strptime(
+            appointment_time, '%Y-%m-%dT%H:%M')
     except ValueError:
         flash('Invalid appointment time format', 'error')
         return redirect(url_for('bookings.show_booking_form'))
 
     # Check if the service is available at the requested time
-    existing_booking = Booking.query.filter_by(service_id=service_id, branch_id=branch_id, appointment_time=appointment_time).first()
+    existing_booking = Booking.query.filter_by(
+        service_id=service_id, branch_id=branch_id,
+        appointment_time=appointment_time).first()
     if existing_booking:
         flash('This time slot is already booked', 'error')
         return redirect(url_for('bookings.show_booking_form'))
@@ -85,15 +91,17 @@ def submit_booking():
                                service_name=service_name,
                                branch_name=branch_name,
                                appointment_time=appointment_time)
-        #return redirect(url_for('bookings.booking_confirmation'))
+
     except Exception as e:
         db.session.rollback()
         flash(f"Error booking appointment: {str(e)}", 'error')
         return render_template('booking_form.html')
 
+
 @booking_routes.route('/booking_confirmation')
 def booking_confirmation():
     return render_template('booking_confirmation.html')
+
 
 @booking_routes.route('/doctor/bookings', methods=['GET'])
 def doctor_view():
@@ -137,6 +145,7 @@ def doctor_view():
 # Set a secret word for doctor access (can be moved to a config file)
 SECRET_WORD = "injil"
 
+
 # Route to handle doctor access
 @booking_routes.route('/doctor-login', methods=['POST'])
 def doctor_login():
@@ -154,6 +163,7 @@ def doctor_login():
 
 populate_routes = Blueprint('populate_routes', __name__)
 
+
 @populate_routes.route('/populate_routes')
 def populate_db():
     # Check if already populated (to avoid multiple insertions)
@@ -162,28 +172,42 @@ def populate_db():
 
     # Branches data
     branches_data = [
-        {'name': 'Nairobi Branch', 'location': 'Nairobi, Kenya', 'contacts': '0722 000 111', 'email': 'nairobi@injeelhospital.com'},
-        {'name': 'Mombasa Branch', 'location': 'Mombasa, Kenya', 'contacts': '0733 111 222', 'email': 'mombasa@injeelhospital.com'},
-        {'name': 'Kisumu Branch', 'location': 'Kisumu, Kenya', 'contacts': '0744 222 333', 'email': 'kisumu@injeelhospital.com'}
+        {'name': 'Nairobi Branch', 'location': 'Nairobi, Kenya',
+            'contacts': '0722 000 111', 'email': 'nairobi@injeelhospital.com'},
+        {'name': 'Mombasa Branch', 'location': 'Mombasa, Kenya',
+            'contacts': '0733 111 222', 'email': 'mombasa@injeelhospital.com'},
+        {'name': 'Kisumu Branch', 'location': 'Kisumu, Kenya', 'contacts':
+            '0744 222 333', 'email': 'kisumu@injeelhospital.com'}
     ]
 
     # Services data
     services_data = [
-        {'name': 'General Consultation', 'description': 'Consultation with a general practitioner'},
-        {'name': 'Surgical Services', 'description': 'Full range of surgeries'},
-        {'name': 'Maternal and Child Health', 'description': 'Services for mothers and children'},
+        {'name': 'General Consultation', 'description':
+            'Consultation with a general practitioner'},
+        {'name': 'Surgical Services', 'description':
+            'Full range of surgeries'},
+        {'name': 'Maternal and Child Health', 'description':
+            'Services for mothers and children'},
         {'name': 'Oncology', 'description': 'Cancer diagnosis and treatment'},
-        {'name': 'Psychiatry and Mental Health', 'description': 'Mental health consultations and treatments'},
-        {'name': 'Laboratory Services', 'description': 'Blood tests, cultures, etc.'},
-        {'name': 'Radiology Services', 'description': 'X-rays, MRI, CT scans, Ultrasounds'},
-        {'name': 'Pathology Services', 'description': 'Lab analysis of tissue samples'},
-        {'name': 'Pharmacy Services', 'description': 'Pharmaceuticals and medications'},
-        {'name': 'Dialysis Unit', 'description': 'Kidney-related treatments'},
-        {'name': 'Dental and Eye Care Services', 'description': 'Dental and eye health services'},
-        {'name': 'Ophthalmology', 'description': 'Eye surgeries and treatments'}
+        {'name': 'Psychiatry and Mental Health', 'description':
+            'Mental health consultations and treatments'},
+        {'name': 'Laboratory Services', 'description':
+            'Blood tests, cultures, etc.'},
+        {'name': 'Radiology Services', 'description':
+            'X-rays, MRI, CT scans, Ultrasounds'},
+        {'name': 'Pathology Services', 'description':
+            'Lab analysis of tissue samples'},
+        {'name': 'Pharmacy Services', 'description':
+            'Pharmaceuticals and medications'},
+        {'name': 'Dialysis Unit', 'description':
+            'Kidney-related treatments'},
+        {'name': 'Dental and Eye Care Services',
+            'description': 'Dental and eye health services'},
+        {'name': 'Ophthalmology', 'description':
+            'Eye surgeries and treatments'}
     ]
 
-    with db.app.app_context():  # Ensure this is running in the correct app context
+    with db.app.app_context():  # Ensure this is running in the correct app
         # Create all the tables if they don't exist
         db.create_all()
 
@@ -194,7 +218,7 @@ def populate_db():
 
         db.session.commit()  # Commit branches to the database
 
-        # Now that branches are committed, assign services to a branch (Nairobi Branch in this case)
+        # Assign services to a branch
         branch_nairobi = Branch.query.filter_by(name="Nairobi Branch").first()
         if branch_nairobi:
             for service_data in services_data:

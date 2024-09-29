@@ -9,6 +9,7 @@ from app.models.service import Service
 from app.models.branch import Branch
 from app import db
 
+
 class Booking(BaseModel):
     """ The Booking made by client """
     __tablename__ = 'bookings'
@@ -17,8 +18,8 @@ class Booking(BaseModel):
     patient_gender = db.Column(db.String(10), nullable=False)
     patient_details = db.Column(db.Text, nullable=False)
     appointment_time = db.Column(db.DateTime, nullable=False)
-    #status = db.Column(db.String(20), default='active')
-    service_id = db.Column(db.Integer, db.ForeignKey('services.id', name='fk_bookings_service_id'), nullable=False)
+    service_id = db.Column(db.Integer, db.ForeignKey(
+        'services.id', name='fk_bookings_service_id'), nullable=False)
     services = db.relationship("Service", back_populates="bookings")
     branch_id = db.Column(
         db.Integer, db.ForeignKey(

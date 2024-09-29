@@ -8,6 +8,7 @@ from flask_migrate import upgrade
 
 migrate_routes = Blueprint('migrate_routes', __name__)
 
+
 @migrate_routes.route('/migrate-db')
 def migrate_db():
     """upgrade database"""
